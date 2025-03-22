@@ -6,7 +6,8 @@ export const store = configureStore({
     reducer: {
             [productsApi.reducerPath]: productsApi.reducer} ,
             middleware: (getDefaultMiddleware) =>
-                getDefaultMiddleware().concat(productsApi.middleware),
+                getDefaultMiddleware().concat(productsApi.middleware)
+        
 })
 
 export type RootState = ReturnType<typeof store.getState>

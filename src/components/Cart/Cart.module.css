@@ -1,6 +1,6 @@
 .cart {
     width: 285px;
-    height: 446px;
+    /* height: 446px; */
     padding: 0;
     
 }
@@ -19,7 +19,7 @@
 padding-top: 17px;
 padding-left: 16px;
 width: 285px;
-height: 120px;
+height: 170px;
 }
 
 .information_content {
@@ -34,7 +34,7 @@ justify-content: space-between;
 .line_1 {
     font-family: Poppins;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 120%;
     letter-spacing: 0%;
 }

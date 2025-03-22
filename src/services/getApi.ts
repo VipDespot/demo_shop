@@ -15,7 +15,7 @@ export const productsApi = createApi ({
 
 
 export const { useGetProductsQuery } = productsApi;
-console.log(useGetProductsQuery())
+
 
 // export const postsApi = createApi({
 //     reducerPath: 'postsApi',
