@@ -1,16 +1,11 @@
-import React from 'react'
-import {Cart} from '../components/Cart/Cart'
-import style from './Home.module.css'
-import zastavka from '../images/Zastavka.svg'
-
-
+import { Cart } from "../components/Cart/Cart";
+import style from "./Home.module.css";
 function Home() {
-    
-    return (
+  return (
     <div className={style.content}>
-       <Cart/>   
+      <Cart />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
