@@ -1,5 +1,6 @@
 import styles from "./Cart.module.css";
 import { useGetProductsQuery } from "../../services/getApi";
+import { Text } from "@mantine/core";
 
 export const Cart = () => {
   const { data: products, isLoading } = useGetProductsQuery();
@@ -18,9 +19,15 @@ export const Cart = () => {
 
             <div className={styles.information}>
               <div className={styles.information_content}>
-                <div className={styles.line_1}>{product.title}</div>
-                <div className={styles.line_2}>{product.slug}</div>
-                <div className={styles.line_3}>$ {product.price}</div>
+                <Text c="black" size="lg" ta="left" fw={700} ff="poppins">
+                  {product.title}
+                </Text>
+                <Text size="sm" ta="left" fw={350} c="gray" ff="poppins">
+                  {product.slug}
+                </Text>
+                <Text size="lg" c="balack" fw={600} ff="poppins">
+                  $ {product.price}
+                </Text>
               </div>
             </div>
           </div>
