@@ -1,0 +1,32 @@
+.cart {
+  width: 285px;
+}
+
+.sofa {
+  height: 310px;
+  width: 285px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.information {
+  background-color: #f4f5f7;
+  margin-top: 0px;
+  padding-top: 17px;
+  padding-left: 16px;
+  width: 285px;
+  height: 170px;
+}
+
+.information_content {
+  width: 249px;
+  height: 100px;
+  padding-top: 15px;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align:start;
+  gap: 15px;
+}
+

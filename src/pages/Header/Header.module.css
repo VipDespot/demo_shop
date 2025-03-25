@@ -1,0 +1,33 @@
+.header {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.header_content {
+  width: 1286px;
+  height: 41px;
+  margin-top: 29px;
+  margin-left: 54px;
+  padding-right: 54px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation {
+  width: 430px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-family: Poppins;
+  line-height: 100%;
+}
+
+.settings {
+  width: 28px;
+  height: 28px;
+}
