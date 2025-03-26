@@ -1,13 +1,11 @@
-export type Product = Product2;
-
-export interface Product2 {
+export interface Product {
   id: number;
   title: string;
   slug: string;
   price: number;
   description: string;
   category: Category;
-  images: string[];
+  images: string;
   creationAt: string;
   updatedAt: string;
 }
