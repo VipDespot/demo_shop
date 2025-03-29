@@ -5,7 +5,7 @@ export interface Product {
   price: number;
   description: string;
   category: Category;
-  images: string;
+  images: string[];
   creationAt: string;
   updatedAt: string;
 }

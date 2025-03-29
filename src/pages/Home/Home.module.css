@@ -7,3 +7,7 @@ padding-top: 17px;
 display: flex;
 flex-wrap: wrap;
 }
+
+.link {
+    text-decoration: none;
+}

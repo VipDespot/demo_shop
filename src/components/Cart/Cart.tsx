@@ -1,8 +1,10 @@
 import styles from "./Cart.module.css";
 import { useGetProductsQuery } from "../../services/getApi";
 import { Text } from "@mantine/core";
+import { useNavigate } from "react-router";
 
 export const Cart = () => {
+  const navigate = useNavigate();
   const { data: products, isLoading } = useGetProductsQuery();
   if (!isLoading) {
     <div>Loading....</div>;
@@ -11,7 +13,10 @@ export const Cart = () => {
   return (
     <>
       {products?.map((product) => (
-        <div className={styles.cart}>
+        <div
+          className={styles.cart}
+          onClick={() => navigate(`products/${product.id}`)}
+        >
           <div className={styles.content}>
             <div className={styles.cart_img}>
               <img src={product.images} className={styles.sofa}></img>
@@ -19,7 +24,7 @@ export const Cart = () => {
 
             <div className={styles.information}>
               <div className={styles.information_content}>
-                <Text c="black" size="lg" ta="left" fw={700} ff="poppins">
+                <Text c="black" size="md" ta="left" fw={700} ff="poppins">
                   {product.title}
                 </Text>
                 <Text size="sm" ta="left" fw={350} c="gray" ff="poppins">

@@ -8,9 +8,12 @@ export const productsApi = createApi({
     getProducts: builder.query<Product[], void>({
       query: () => "products",
     }),
+    getProductsById: builder.query<Product, number>({
+      query: (id) => `products/${id}`,
+    }),
   }),
 });
 
-export const { useGetProductsQuery } = productsApi;
+export const { useGetProductsQuery, useGetProductsByIdQuery } = productsApi;
 
-//const apiUrl = import.meta.env.VITE_API_URL;
+

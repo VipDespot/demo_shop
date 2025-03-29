@@ -1,11 +1,13 @@
 import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { Routes, Route } from "react-router";
-import Home from "./Home/Home";
+
 import Basket from "./pages/Basket";
 import Header from "./pages/Header/Header";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
+import Home from "./pages/Home/Home";
+import { Passport } from "./components/Product/Passport";
 
 export const App = () => {
   return (
@@ -18,6 +20,7 @@ export const App = () => {
             <Route path="/basket" element={<Basket />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/products/:id" element={<Passport />}></Route>
           </Routes>
         </div>
       </div>
