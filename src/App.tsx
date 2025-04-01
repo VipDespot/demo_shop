@@ -2,12 +2,12 @@ import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { Routes, Route } from "react-router";
 
-import Basket from "./pages/Basket";
 import Header from "./pages/Header/Header";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import { Passport } from "./components/Product/Passport";
+import { Basket } from "./pages/Basket/Basket";
 
 export const App = () => {
   return (

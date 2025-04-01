@@ -12,17 +12,17 @@ export const Passport = () => {
   return (
     <div className={style.passport}>
       <div className={style.gallery}>
-        <ProductGelary img={paramets?.images} />
+        <ProductGelary coverImgs={paramets?.images} />
       </div>
       <div className={style.description}>
         <div className={style.title}>
-          <Text size="xl" fw={600} c="black">
+          <Text size="xl" fw={600} c="black" ff="poppins">
             {paramets?.title}
           </Text>
-          <Text size="xl" fw={700}>
+          <Text size="xl" fw={700} ff="poppins">
             $ {paramets?.price}
           </Text>
-          <Text size="sm" c="gray" className={style.text}>
+          <Text size="sm" c="gray" className={style.text} ff="poppins">
             {paramets?.description}
           </Text>
         </div>

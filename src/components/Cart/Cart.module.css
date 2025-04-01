@@ -1,6 +1,7 @@
 .cart {
   width: 285px;
   background-color: #f4f5f7;
+  text-decoration: none;
 }
 
 .sofa {
@@ -28,4 +29,8 @@
   flex-wrap: nowrap;
   justify-content: center;
   text-align: start;
+}
+
+.price {
+  color: black;
 }

@@ -1,28 +1,29 @@
 import { useState } from "react";
 import styles from "./ProductGelary.module.css";
+import cx from "classnames";
 
 interface ProductProps {
-  img?: string[];
+  coverImgs?: string[];
 }
 
-export const ProductGelary: React.FC<ProductProps> = ({ img = [] }) => {
+export const ProductGelary: React.FC<ProductProps> = ({ coverImgs = [] }) => {
   const [selectedImage, setSelectedImage] = useState(0);
   return (
     <div className={styles.galleryContainer}>
       <div className={styles.mainImageWrapper}>
         <img
-          src={img[selectedImage]}
+          src={coverImgs[selectedImage]}
           alt={`Product view ${selectedImage + 1}`}
           className={styles.mainImage}
         />
       </div>
       <div className={styles.thumbnails}>
-        {img.map((img, index) => (
+        {coverImgs.map((img, index) => (
           <button
             key={img || index}
-            className={`${styles.thumbnail} ${
-              index === selectedImage ? styles.active : ""
-            }`}
+            className={cx(styles.thumbnail, {
+              [styles.active]: index === selectedImage,
+            })}
             onClick={() => setSelectedImage(index)}
           >
             <img
@@ -36,5 +37,3 @@ export const ProductGelary: React.FC<ProductProps> = ({ img = [] }) => {
     </div>
   );
 };
-
-//{ images }: ProductProps
