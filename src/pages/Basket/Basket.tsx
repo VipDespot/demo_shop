@@ -3,7 +3,7 @@ import styles from './Basket.module.css'
 
 export const Basket = () => {
   return (
-    <div>
+    <div className={styles.b}>
       Ba
     </div>
   )
