@@ -1,0 +1,13 @@
+.content {
+  margin-top: 170px;
+  margin-left: 99px;
+
+  gap: 40px;
+  padding-top: 17px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.link {
+  text-decoration: none;
+}

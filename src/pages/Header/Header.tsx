@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import styles from "./Header.module.css";
-import logo from "../../images/Frame 168.svg";
+import logo from "../../images/SHOP.CO.svg";
 import basket from "../../images/ant-design_shopping-cart-outlined.svg";
 
 function Header() {
@@ -11,15 +11,9 @@ function Header() {
           <img src={logo} />
         </div>
         <div className={styles.navigation}>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            Home
-          </Link>
-          <Link to="/about" style={{ textDecoration: "none" }}>
-            About
-          </Link>
-          <Link to="/contact" style={{ textDecoration: "none" }}>
-            Contact
-          </Link>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </div>
         <div className={styles.settings}>
           <Link to="/basket">
