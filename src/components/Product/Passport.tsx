@@ -8,7 +8,6 @@ import { Buttons } from "../Button/Button";
 export const Passport = () => {
   const productId = useParams();
   const { data: paramets } = useGetProductsByIdQuery(Number(productId.id));
-
   return (
     <div className={style.passport}>
       <div className={style.gallery}>
@@ -26,7 +25,7 @@ export const Passport = () => {
             {paramets?.description}
           </Text>
         </div>
-        <Buttons />
+        {paramets && <Buttons product={{ ...paramets, quantity: 1 }} />}
       </div>
     </div>
   );

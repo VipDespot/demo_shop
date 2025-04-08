@@ -2,8 +2,12 @@ import { Link } from "react-router";
 import styles from "./Header.module.css";
 import logo from "../../images/SHOP.CO.svg";
 import basket from "../../images/ant-design_shopping-cart-outlined.svg";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 function Header() {
+  const count = useSelector((state: RootState) => state.basket.items);
+  // console.log(count.length + count[0].quantity)
   return (
     <div className={styles.header}>
       <div className={styles.header_content}>
@@ -26,4 +30,3 @@ function Header() {
 }
 
 export default Header;
-
