@@ -24,12 +24,12 @@ export const Basket = () => {
         <div className={styles.cart}>
           <div className={styles.cart_content}>
             <Text ff="poppins" fw={500}>
-              <div className={styles.header}>
+              <ul className={styles.header}>
                 <li className={styles.headerProduct}>Product</li>
                 <li className={styles.headerPrice}>Price</li>
                 <li className={styles.headerQuantity}>Quantity</li>
                 <li className={styles.headerSubtotal}>Subtotal</li>
-              </div>
+              </ul>
             </Text>
             {cartItem.map((cart) => (
               <div className={styles.products}>
