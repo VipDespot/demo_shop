@@ -9,7 +9,6 @@ export interface Product {
   creationAt: string;
   updatedAt: string;
 }
-
 export interface Category {
   id: number;
   name: string;
@@ -18,7 +17,6 @@ export interface Category {
   creationAt: string;
   updatedAt: string;
 }
-
 export interface ProductParams {
   page?: number;
   limit?: number;

@@ -16,7 +16,6 @@ export const Cart = () => {
             <div className={styles.cart_img}>
               <img src={product.images} className={styles.sofa}></img>
             </div>
-
             <div className={styles.information}>
               <div className={styles.information_content}>
                 <Text c="black" size="md" ta="left" fw={700} ff="poppins">

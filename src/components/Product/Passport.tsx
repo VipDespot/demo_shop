@@ -3,30 +3,29 @@ import { useGetProductsByIdQuery } from "../../services/getApi";
 import { ProductGelary } from "../ProductGelary/ProductGelary";
 import style from "./Passport.module.css";
 import { Text } from "@mantine/core";
-import { Buttons } from "../Button/Button";
+import { ButtonAddToCart } from "../Button/ButtonAddToCart";
 
 export const Passport = () => {
   const productId = useParams();
-  const { data: paramets } = useGetProductsByIdQuery(Number(productId.id));
-
+  const { data: products } = useGetProductsByIdQuery(Number(productId.id));
   return (
     <div className={style.passport}>
       <div className={style.gallery}>
-        <ProductGelary coverImgs={paramets?.images} />
+        <ProductGelary coverImgs={products?.images} />
       </div>
       <div className={style.description}>
         <div className={style.title}>
           <Text size="xl" fw={600} c="black" ff="poppins">
-            {paramets?.title}
+            {products?.title}
           </Text>
           <Text size="xl" fw={700} ff="poppins">
-            $ {paramets?.price}
+            $ {products?.price}
           </Text>
           <Text size="sm" c="gray" className={style.text} ff="poppins">
-            {paramets?.description}
+            {products?.description}
           </Text>
         </div>
-        <Buttons />
+        {products && <ButtonAddToCart product={{ ...products, quantity: 1 }} />}
       </div>
     </div>
   );

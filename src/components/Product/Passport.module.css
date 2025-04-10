@@ -4,7 +4,6 @@
   margin-top: 65px;
   justify-content: center;
 }
-
 .description {
   height: 350px;
   width: 600px;
@@ -18,7 +17,6 @@
   flex-direction: column;
   gap: 1px;
 }
-
 .text {
   padding-top: 25px;
 }

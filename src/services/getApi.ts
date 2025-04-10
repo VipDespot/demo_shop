@@ -17,3 +17,4 @@ export const productsApi = createApi({
 export const { useGetProductsQuery, useGetProductsByIdQuery } = productsApi;
 
 
+//https://fakestoreapi.com/products
