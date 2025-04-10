@@ -9,7 +9,7 @@ type ButtonAddToCartProps = {
   product: BasketItem;
 };
 
-export const Buttons = ({ product }: ButtonAddToCartProps) => {
+export const ButtonAddToCart = ({ product }: ButtonAddToCartProps) => {
   const dispatch = useDispatch();
   console.log(product);
   return (

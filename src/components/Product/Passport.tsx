@@ -3,7 +3,7 @@ import { useGetProductsByIdQuery } from "../../services/getApi";
 import { ProductGelary } from "../ProductGelary/ProductGelary";
 import style from "./Passport.module.css";
 import { Text } from "@mantine/core";
-import { Buttons } from "../Button/ButtonAddToCart";
+import { ButtonAddToCart } from "../Button/ButtonAddToCart";
 
 export const Passport = () => {
   const productId = useParams();
@@ -25,7 +25,7 @@ export const Passport = () => {
             {products?.description}
           </Text>
         </div>
-        {products && <Buttons product={{ ...products, quantity: 1 }} />}
+        {products && <ButtonAddToCart product={{ ...products, quantity: 1 }} />}
       </div>
     </div>
   );

@@ -16,7 +16,7 @@
   height: 200px;
   top: 488px;
   left: 947px;
-  background-color: var(--background-color-components);
+  background-color: var(--background-color-primary);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -28,7 +28,7 @@ li {
   list-style-type: none;
 }
 .header {
-  background-color: var(--background-color-components);
+  background-color: var(--background-color-primary);
   border-top: none;
   width: 817px;
   height: 58px;
@@ -50,6 +50,12 @@ li {
   width: 108px;
   height: 105px;
   border-radius: 17px;
+}
+.quantity {
+    border: 1px solid gray;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
 }
 .headerProduct {
   padding-right: 10px;

@@ -33,60 +33,29 @@ export const Basket = () => {
             </Text>
             {cartItem.map((cart) => (
               <div className={styles.products}>
-                <li>
-                  <img src={cart.images[0]} className={styles.image} />
-                </li>
-                <Text
-                  style={{
-                    width: "130px",
-                    fontFamily: "Poppins",
-                    fontSize: "16px",
-                    color: "gray",
-                  }}
-                >
+                <img src={cart.images[0]} className={styles.image} />
+                <Text w="130px" ff="poppins" size="16px" c="gray">
                   {cart.title}
                 </Text>
-                <Text
-                  style={{
-                    fontSize: "16px",
-                    fontFamily: "Poppins",
-                    color: "gray",
-                    fontWeight: 900,
-                  }}
-                >
+                <Text ff="poppins" size="md" fw={900} c="gray">
                   $ {cart.price}
                 </Text>
-                <Text className={styles.quantity} ff="poppins">
+                <Text ff="poppins" ta="center" className={styles.quantity}>
                   {cart.quantity}
                 </Text>
-
                 <Text ff="poppins" fw={800}>
                   $ {cart.quantity * cart.price}
                 </Text>
-
                 <img src={miniBasket} onClick={() => handleClick(cart.id)} />
               </div>
             ))}
           </div>
           <div className={styles.allTotal}>
             <div className={styles.total}>
-              <Text
-                style={{
-                  fontFamily: "Popppins",
-                  fontWeight: 600,
-                  fontSize: "28px",
-                }}
-              >
+              <Text ff="poppins" fw={600} size="28px">
                 Cart Totals
               </Text>
-              <Text
-                style={{
-                  fontFamily: "Poppins",
-                  fontSize: "20px",
-                  wordSpacing: "10px",
-                  fontWeight: 550,
-                }}
-              >
+              <Text ff="poppins" size="20px" fw={550}>
                 Total: ${sumPrice}
               </Text>
               <Button
@@ -109,14 +78,7 @@ export const Basket = () => {
           </div>
         </div>
       ) : (
-        <Text
-          style={{
-            textAlign: "center",
-            paddingTop: "120px",
-            fontSize: "60px",
-            fontFamily: "Poppins",
-          }}
-        >
+        <Text size="60px" ff="poppins" ta="center" pt="120px">
           Cart is empty{" "}
           <FontAwesomeIcon icon={faCartShopping} size="1x" color="#ccc" />
         </Text>
