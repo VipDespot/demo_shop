@@ -6,23 +6,13 @@ import { Button, Text } from "@mantine/core";
 import miniBasket from "../../images/ant-design_delete-filled.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-
-const EmptyCart = () => {
-  return (
-    <div className="empty-cart">
-      <FontAwesomeIcon icon={faCartShopping} size="4x" color="#ccc" />
-      <p>Корзина пустая</p>
-    </div>
-  );
-};
+import classNames from "classnames";
 
 export const Basket = () => {
   const cartItem = useSelector((state: RootState) => state.basket.items);
   const dispatch = useDispatch();
   const handleClick = (id: number | string) => {
-    if (window.confirm("Вы уверены, что хотите удалить товар?")) {
-      dispatch(removeToBasket(id));
-    }
+    dispatch(removeToBasket(id));
   };
   const sumPrice = cartItem.reduce((accumulator, currentItem) => {
     return accumulator + currentItem.price * currentItem.quantity;
@@ -46,22 +36,59 @@ export const Basket = () => {
                 <li>
                   <img src={cart.images[0]} className={styles.image} />
                 </li>
-                <li className={styles.title}>{cart.title}</li>
-                <li className={styles.price}>$ {cart.price}</li>
-                <li className={styles.quantity}>{cart.quantity}</li>
-                <li className={styles.subtotal}>
+                <Text
+                  style={{
+                    width: "130px",
+                    fontFamily: "Poppins",
+                    fontSize: "16px",
+                    color: "gray",
+                  }}
+                >
+                  {cart.title}
+                </Text>
+                <Text
+                  style={{
+                    fontSize: "16px",
+                    fontFamily: "Poppins",
+                    color: "gray",
+                    fontWeight: 900,
+                  }}
+                >
+                  $ {cart.price}
+                </Text>
+                <Text className={styles.quantity} ff="poppins">
+                  {cart.quantity}
+                </Text>
+
+                <Text ff="poppins" fw={800}>
                   $ {cart.quantity * cart.price}
-                </li>
+                </Text>
+
                 <img src={miniBasket} onClick={() => handleClick(cart.id)} />
               </div>
             ))}
           </div>
           <div className={styles.allTotal}>
             <div className={styles.total}>
-              <Text ff="poppins" className={styles.totalTitle}>
+              <Text
+                style={{
+                  fontFamily: "Popppins",
+                  fontWeight: 600,
+                  fontSize: "28px",
+                }}
+              >
                 Cart Totals
               </Text>
-              <div className={styles.totalPrice}>Total: ${sumPrice}</div>
+              <Text
+                style={{
+                  fontFamily: "Poppins",
+                  fontSize: "20px",
+                  wordSpacing: "10px",
+                  fontWeight: 550,
+                }}
+              >
+                Total: ${sumPrice}
+              </Text>
               <Button
                 variant="outline"
                 color="green"
@@ -82,10 +109,17 @@ export const Basket = () => {
           </div>
         </div>
       ) : (
-        <h1 className={styles.isEmty}>
-          Cart is empty {" "}
+        <Text
+          style={{
+            textAlign: "center",
+            paddingTop: "120px",
+            fontSize: "60px",
+            fontFamily: "Poppins",
+          }}
+        >
+          Cart is empty{" "}
           <FontAwesomeIcon icon={faCartShopping} size="1x" color="#ccc" />
-        </h1>
+        </Text>
       )}
     </div>
   );

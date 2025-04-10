@@ -1,17 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "../../types/api/Api.Products";
-import { BasketState } from "../../types/api/BasketTypes";
+import { BasketItem, BasketState } from "../../types/api/BasketTypes";
 
 const initialState: BasketState = {
   items: [],
-  total: 0,
 };
 
 const BasketSlice = createSlice({
   name: "basket",
   initialState,
   reducers: {
-    addToBascet: (state, action: PayloadAction<Product>) => {
+    addToBascet: (state, action: PayloadAction<BasketItem>) => {
       const thisProduct = state.items.find(
         (item) => item.id === action.payload.id
       );

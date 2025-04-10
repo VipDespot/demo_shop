@@ -5,5 +5,4 @@ export interface BasketItem extends Product {
 }
 export interface BasketState {
   items: BasketItem[];
-  total: number;
 }
