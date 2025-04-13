@@ -1,12 +1,24 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Product } from "../types/api/Api.Products";
+import { Category, Product } from "../types/api/Api.Products";
 
 export const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_URL }),
   endpoints: (builder) => ({
-    getProducts: builder.query<Product[], void>({
-      query: () => "products",
+    getCategories: builder.query<Category[], void>({
+      query: () => "categories",
+    }),
+    getProducts: builder.query<Product[],{ page: number; categoryId?: number }>({
+      query: ({ page, categoryId }) => {
+        const limit = 12;
+        const offset = (page - 1) * limit;
+        let url = `products?offset=${offset}&limit=${limit}`;
+
+        if (categoryId) {
+          url += `&categoryId=${categoryId}`;
+        }
+        return url;
+      },
     }),
     getProductsById: builder.query<Product, number>({
       query: (id) => `products/${id}`,
@@ -14,7 +26,8 @@ export const productsApi = createApi({
   }),
 });
 
-export const { useGetProductsQuery, useGetProductsByIdQuery } = productsApi;
-
-
-//https://fakestoreapi.com/products
+export const {
+  useGetCategoriesQuery,
+  useGetProductsQuery,
+  useGetProductsByIdQuery,
+} = productsApi;
