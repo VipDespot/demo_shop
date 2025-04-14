@@ -8,17 +8,15 @@ export const productsApi = createApi({
     getCategories: builder.query<Category[], void>({
       query: () => "categories",
     }),
-    getProducts: builder.query<Product[],{ page: number; categoryId?: number }>({
-      query: ({ page, categoryId }) => {
-        const limit = 12;
-        const offset = (page - 1) * limit;
-        let url = `products?offset=${offset}&limit=${limit}`;
-
-        if (categoryId) {
-          url += `&categoryId=${categoryId}`;
-        }
-        return url;
-      },
+    getProducts: builder.query<Product[],{ page: number; categoryId?: number; limit: number }>({
+      query: ({ page, categoryId, limit }) => ({
+        url: "products",
+        params: {
+          offset: (page - 1) * limit,
+          limit,
+          ...(categoryId !== undefined && { categoryId }),
+        },
+      }),
     }),
     getProductsById: builder.query<Product, number>({
       query: (id) => `products/${id}`,

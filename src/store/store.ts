@@ -3,6 +3,7 @@ import basketReducer from "./slice/basketSlice";
 import { productsApi } from "../services/getApi";
 import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
+import limitedSlice from "./slice/limitedSlice";
 
 const persistConfig = {
   key: "root",
@@ -12,12 +13,14 @@ const persistConfig = {
 const rootReducer = combineReducers({
   [productsApi.reducerPath]: productsApi.reducer,
   basket: basketReducer,
+  limited: limitedSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
+
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(productsApi.middleware),
 });
