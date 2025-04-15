@@ -6,7 +6,6 @@ import { Button, Text } from "@mantine/core";
 import miniBasket from "../../images/ant-design_delete-filled.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import classNames from "classnames";
 
 export const Basket = () => {
   const cartItem = useSelector((state: RootState) => state.basket.items);

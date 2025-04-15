@@ -1,20 +1,20 @@
 import styles from "./Cart.module.css";
-import { useGetProductsQuery } from "../../services/getApi";
 import { Text } from "@mantine/core";
 import { Link } from "react-router";
+import { Product } from "../../types/api/Api.Products";
 
-export const Cart = () => {
-  const { data: products, isLoading } = useGetProductsQuery();
-  if (!isLoading) {
-    <div>Loading....</div>;
-  }
+interface ProductProps {
+  products?: Product[]
+}
+export const Cart: React.FC<ProductProps> = ({products = [] }) => {
+  console.log(products[0].images)
   return (
-    <>
+    <div className={styles.products}>
       {products?.map((product) => (
         <Link className={styles.cart} to={`/products/${product.id}`}>
           <div className={styles.content}>
             <div className={styles.cart_img}>
-              <img src={product.images} className={styles.sofa}></img>
+              <img src={product.images[0]} className={styles.sofa}></img>
             </div>
             <div className={styles.information}>
               <div className={styles.information_content}>
@@ -38,6 +38,6 @@ export const Cart = () => {
           </div>
         </Link>
       ))}
-    </>
+    </div>
   );
 };

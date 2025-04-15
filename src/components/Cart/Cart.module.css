@@ -34,3 +34,8 @@
 .price {
   color: black;
 }
+.products {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}

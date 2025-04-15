@@ -11,7 +11,6 @@ type ButtonAddToCartProps = {
 
 export const ButtonAddToCart = ({ product }: ButtonAddToCartProps) => {
   const dispatch = useDispatch();
-  console.log(product);
   return (
     <div className={style.buttons}>
       <Button
