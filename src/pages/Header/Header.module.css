@@ -9,7 +9,7 @@
   height: 41px;
   margin-top: 29px;
   margin-left: 54px;
-  padding-right: 54px;
+  padding-right: 145px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -30,6 +30,9 @@
 .settings {
   width: 28px;
   height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
 }
 
 a{

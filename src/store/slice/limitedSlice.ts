@@ -15,4 +15,5 @@ const limitedSlice = createSlice({
 });
 
 export const { setProductsPerPage } = limitedSlice.actions;
-export default limitedSlice.reducer;
+export default limitedSlice.reducer
+
