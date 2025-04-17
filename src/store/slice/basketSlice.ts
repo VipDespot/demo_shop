@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Product } from "../../types/api/Api.Products";
 import { BasketItem, BasketState } from "../../types/api/BasketTypes";
 
 const initialState: BasketState = {
