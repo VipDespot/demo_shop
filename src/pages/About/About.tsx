@@ -1,5 +1,8 @@
-function About() {
-  return <div>About</div>;
-}
+import styles from './About.module.css';
 
-export default About;
+export const About = () => {
+  return (
+    <></>
+  );
+};
+

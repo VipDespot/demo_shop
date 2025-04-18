@@ -1,8 +1,8 @@
-import { DatePicker } from "@mantine/dates";
-
-
-function Contact() {
-  return <div><DatePicker withWeekNumbers /></div>;
-}
-
-export default Contact;
+import React from 'react';
+import styles from './Contact.module.css';
+export const Contact: React.FC = () => {
+  return (
+    <div className={styles.container}>
+    </div>
+  );
+};

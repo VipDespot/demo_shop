@@ -4,10 +4,12 @@ import { ProductGelary } from "../ProductGelary/ProductGelary";
 import style from "./Passport.module.css";
 import { Text } from "@mantine/core";
 import { ButtonAddToCart } from "../Button/ButtonAddToCart";
+import { CustomLoader } from "../CustomLoader";
 
 export const Passport = () => {
   const productId = useParams();
   const { data: products } = useGetProductsByIdQuery(Number(productId.id));
+  if (!products) return <CustomLoader/>;
   return (
     <div className={style.passport}>
       <div className={style.gallery}>

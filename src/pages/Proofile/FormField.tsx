@@ -3,7 +3,7 @@ import { User } from "./Profile";
 import style from "./Profile.module.css";
 import { Text } from "@mantine/core";
 import { DatePicker } from "@mantine/dates";
-export const FormUser = ({
+export const FormField = ({
   name,
   label,
   type,
