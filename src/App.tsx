@@ -8,7 +8,7 @@ import {Contact} from "./pages/Contact/Contact";
 import { Home } from "./pages/Home/Home";
 import { Passport } from "./components/Product/Passport";
 import { Basket } from "./pages/Basket/Basket";
-import  {Profile}  from "./pages/Proofile/Profile";
+import  {Profile}  from "./pages/Profile/Profile";
 
 export const App = () => {
   return (

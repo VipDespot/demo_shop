@@ -24,39 +24,38 @@ interface FieldConfig {
   type?: React.HTMLInputTypeAttribute;
   validation?: RegisterOptions;
 }
+const fieldsConfig: FieldConfig[] = [
+  { name: "name", label: "First Name" },
+  { name: "login", label: "Login" },
+  {
+    name: "email",
+    label: "Email",
+    type: "email",
+    validation: {
+      required: true,
+    },
+  },
+  {
+    name: "password",
+    label: "Password",
+    type: "password",
+    validation: {
+      required: true,
+      minLength: 6,
+    },
+  },
+  {
+    name: "birthDate",
+    label: "Date of Birth",
+    type: "date",
+    validation: {
+      required: true,
+      validate: (value: Date) =>
+        value <= new Date() || "Birth date cannot be in future",
+    },
+  },
+];
 export const Profile = () => {
-  const fieldsConfig: FieldConfig[] = [
-    { name: "name", label: "First Name" },
-    { name: "login", label: "Login" },
-    {
-      name: "email",
-      label: "Email",
-      type: "email",
-      validation: {
-        required: true,
-      },
-    },
-    {
-      name: "password",
-      label: "Password",
-      type: "password",
-      validation: {
-        required: true,
-        minLength: 6,
-      },
-    },
-    {
-      name: "birthDate",
-      label: "Date of Birth",
-      type: "date",
-      validation: {
-        required: true,
-        validate: (value: Date) =>
-          value <= new Date() || "Birth date cannot be in future",
-      },
-    },
-  ];
-
   const [user, setUser] = useLocalStorage<User | null>(
     STORAGE_KEYS.USER_PROFILE,
     null
@@ -79,25 +78,13 @@ export const Profile = () => {
 
   const handleClearUser = () => {
     setUser(null);
-    reset({
-      name: "",
-      login: "",
-      email: "",
-      password: "",
-      birthDate: null,
-    });
   };
   return (
     <div>
       {!user ? (
         <>
           <div className={style.create_profile}>
-            <Text
-              size="50px"
-              ta="center"
-              pt="50px"
-              ff="Arial, Helvetica, sans-serif"
-            >
+            <Text size="50px" ta="center" pt="50px" ff="poppins">
               Let's create a profile
             </Text>
           </div>
@@ -164,7 +151,6 @@ export const Profile = () => {
             className={style.editButton}
             onClick={() => {
               handleClearUser();
-              reset();
             }}
           >
             Edit Profile
