@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import styles from "./Header.module.css";
 import logo from "../../images/SHOP.CO.svg";
 import basket from "../../images/ant-design_shopping-cart-outlined.svg";
+import { Avatar } from "@mantine/core";
 
 function Header() {
   return (
@@ -18,6 +19,9 @@ function Header() {
         <div className={styles.settings}>
           <Link to="/basket">
             <img src={basket} />
+          </Link>
+          <Link to='/profile'>
+          <Avatar src={null} alt="no image here" />
           </Link>
         </div>
       </div>
