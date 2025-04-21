@@ -1,14 +1,14 @@
-import { Cart } from "../../components/Cart/Cart";
-import style from "./Home.module.css";
-import { useState } from "react";
+import { Cart } from '../../components/Cart/Cart';
+import style from './Home.module.css';
+import { useState } from 'react';
 import {
   useGetCategoriesQuery,
   useGetProductsQuery,
-} from "../../services/getApi";
-import { Select } from "@mantine/core";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import { CustomLoader } from "../../components/CustomLoader";
+} from '../../services/getApi';
+import { Select } from '@mantine/core';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { CustomLoader } from '../../components/CustomLoader';
 
 export const Home = () => {
   const limitPage = useSelector(
@@ -48,7 +48,7 @@ export const Home = () => {
         placeholder="All categories"
         onChange={handleCategoryChange}
         data={[
-          { value: "", label: "All Categories" },
+          { value: '', label: 'All Categories' },
           ...(categories?.map((c) => ({
             value: c.id.toString(),
             label: c.name,

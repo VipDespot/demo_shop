@@ -1,7 +1,10 @@
-{
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+{"include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.d.ts",
+    "vite.config.ts",
+    "demo_shop/**/*.ts",
+    "demo_shop/**/*.tsx"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

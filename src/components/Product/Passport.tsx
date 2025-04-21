@@ -1,10 +1,10 @@
-import { useParams } from "react-router";
-import { useGetProductsByIdQuery } from "../../services/getApi";
-import { ProductGelary } from "../ProductGelary/ProductGelary";
-import style from "./Passport.module.css";
-import { Text } from "@mantine/core";
-import { ButtonAddToCart } from "../Button/ButtonAddToCart";
-import { CustomLoader } from "../CustomLoader";
+import { useParams } from 'react-router';
+import { useGetProductsByIdQuery } from '../../services/getApi';
+import { ProductGelary } from '../ProductGelary/ProductGelary';
+import style from './Passport.module.css';
+import { Text } from '@mantine/core';
+import { ButtonAddToCart } from '../Button/ButtonAddToCart';
+import { CustomLoader } from '../CustomLoader';
 
 export const Passport = () => {
   const productId = useParams();

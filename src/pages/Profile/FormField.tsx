@@ -1,8 +1,8 @@
-import { Controller, RegisterOptions, useFormContext } from "react-hook-form";
-import { User } from "./Profile";
-import style from "./Profile.module.css";
-import { Text } from "@mantine/core";
-import { DatePicker } from "@mantine/dates";
+import { Controller, RegisterOptions, useFormContext } from 'react-hook-form';
+import { User } from './Profile';
+import style from './Profile.module.css';
+import { Text } from '@mantine/core';
+import { DatePicker } from '@mantine/dates';
 export const FormField = ({
   name,
   label,
@@ -21,15 +21,15 @@ export const FormField = ({
   } = useFormContext<User>();
 
   const errorMessages: { [key: string]: string } = {
-    email: "Please enter a valid email",
-    minLength: "Password must be at least 6 characters",
-    required: "This field is required",
-    pattern: "Please enter a valid date",
-    validate: "Invalid date",
+    email: 'Please enter a valid email',
+    minLength: 'Password must be at least 6 characters',
+    required: 'This field is required',
+    pattern: 'Please enter a valid date',
+    validate: 'Invalid date',
   };
 
   const getErrorMessage = (errorType: string) => {
-    return errorMessages[errorType] || "Invalid field";
+    return errorMessages[errorType] || 'Invalid field';
   };
 
   return (
@@ -39,7 +39,7 @@ export const FormField = ({
           {label}
         </Text>
       </label>
-      {type === "date" ? (
+      {type === 'date' ? (
         <Controller
           name={name}
           control={control}

@@ -2,14 +2,13 @@ import {
   useForm,
   SubmitHandler,
   FormProvider,
-  RegisterOptions,
-} from "react-hook-form";
-import style from "./Profile.module.css";
-import { useState } from "react";
-import { Text } from "@mantine/core";
-import { FormField } from "./FormField";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { STORAGE_KEYS } from "../../constants/storage";
+} from 'react-hook-form';
+import style from './Profile.module.css';
+import { useState } from 'react';
+import { Text } from '@mantine/core';
+import { FormField } from './FormField';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { STORAGE_KEYS } from '../../constants/storage';
 
 export interface User {
   name: string;
@@ -22,36 +21,36 @@ interface FieldConfig {
   name: keyof User;
   label: string;
   type?: React.HTMLInputTypeAttribute;
-  validation?: RegisterOptions;
+  validation?: object
 }
 const fieldsConfig: FieldConfig[] = [
-  { name: "name", label: "First Name" },
-  { name: "login", label: "Login" },
+  { name: 'name', label: 'First Name' },
+  { name: 'login', label: 'Login' },
   {
-    name: "email",
-    label: "Email",
-    type: "email",
+    name: 'email',
+    label: 'Email',
+    type: 'email',
     validation: {
       required: true,
     },
   },
   {
-    name: "password",
-    label: "Password",
-    type: "password",
+    name: 'password',
+    label: 'Password',
+    type: 'password',
     validation: {
       required: true,
       minLength: 6,
     },
   },
   {
-    name: "birthDate",
-    label: "Date of Birth",
-    type: "date",
+    name: 'birthDate',
+    label: 'Date of Birth',
+    type: 'date',
     validation: {
       required: true,
       validate: (value: Date) =>
-        value <= new Date() || "Birth date cannot be in future",
+        value <= new Date() || 'Birth date cannot be in future',
     },
   },
 ];
@@ -63,10 +62,10 @@ export const Profile = () => {
   const [showPassword, setShowPassword] = useState(false);
   const methods = useForm<User>({
     defaultValues: user || {
-      name: "",
-      login: "",
-      email: "",
-      password: "",
+      name: '',
+      login: '',
+      email: '',
+      password: '',
       birthDate: null,
     },
   });
@@ -75,6 +74,7 @@ export const Profile = () => {
     setUser(data);
     reset();
   };
+
 
   const handleClearUser = () => {
     setUser(null);
@@ -129,12 +129,12 @@ export const Profile = () => {
                 Password:
               </Text>
               <Text c="#2d3748" className={style.detailValue}>
-                {showPassword ? user.password : "••••••••"}
+                {showPassword ? user.password : '••••••••'}
                 <button
                   className={style.toggleButton}
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  <Text size="20px">{showPassword ? " 🙈" : " 👁️"}</Text>
+                  <Text size="20px">{showPassword ? ' 🙈' : ' 👁️'}</Text>
                 </button>
               </Text>
             </div>

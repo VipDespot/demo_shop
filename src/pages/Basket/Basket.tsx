@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import styles from "./Basket.module.css";
-import { RootState } from "../../store/store";
-import { clearBasket, removeToBasket } from "../../store/slice/basketSlice";
-import { Button, Text } from "@mantine/core";
-import miniBasket from "../../images/ant-design_delete-filled.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from 'react-redux';
+import styles from './Basket.module.css';
+import { RootState } from '../../store/store';
+import { clearBasket, removeToBasket } from '../../store/slice/basketSlice';
+import { Button, Text } from '@mantine/core';
+import miniBasket from '../../images/ant-design_delete-filled.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 export const Basket = () => {
   const cartItem = useSelector((state: RootState) => state.basket.items);
@@ -78,7 +78,7 @@ export const Basket = () => {
         </div>
       ) : (
         <Text size="60px" ff="poppins" ta="center" pt="120px">
-          Cart is empty{" "}
+          Cart is empty{' '}
           <FontAwesomeIcon icon={faCartShopping} size="1x" color="#ccc" />
         </Text>
       )}

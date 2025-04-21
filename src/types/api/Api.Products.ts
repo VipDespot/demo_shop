@@ -21,6 +21,6 @@ export interface ProductParams {
   page?: number;
   limit?: number;
   category?: string;
-  sort?: "asc" | "desc";
+  sort?: 'asc' | 'desc';
   rating?: number;
 }
