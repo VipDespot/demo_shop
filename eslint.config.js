@@ -36,11 +36,6 @@ export default [
       }
     },
     rules: {
-      // 'react/react-in-jsx-scope': 'off',
-      // 'indent': ['error', 2],
-      // 'quotes': ['error', 'single'],
-      // 'semi': ['error', 'always'],
-      // '@typescript-eslint/no-explicit-any': 'warn',
       "semi": ["error", "always"],
     "@typescript-eslint/semi": "off"
     }
