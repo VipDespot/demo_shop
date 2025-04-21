@@ -1,4 +1,4 @@
-import { Controller, useFormContext } from "react-hook-form";
+import { Controller, RegisterOptions, useFormContext } from "react-hook-form";
 import { User } from "./Profile";
 import style from "./Profile.module.css";
 import { Text } from "@mantine/core";
@@ -12,7 +12,7 @@ export const FormField = ({
   name: keyof User;
   label: string;
   type?: string;
-  validation?: object;
+  validation?: RegisterOptions<User, keyof User>;
 }) => {
   const {
     register,
