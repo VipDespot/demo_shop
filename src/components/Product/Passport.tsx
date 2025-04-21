@@ -1,3 +1,4 @@
+import React from 'react';
 import { useParams } from 'react-router';
 import { useGetProductsByIdQuery } from '../../services/getApi';
 import { ProductGelary } from '../ProductGelary/ProductGelary';

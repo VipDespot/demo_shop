@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from '@mantine/core';
 import style from './Button.module.css';
 import '../../index.css';

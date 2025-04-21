@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Basket.module.css';
 import { RootState } from '../../store/store';

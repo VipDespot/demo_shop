@@ -1,3 +1,4 @@
+import React from 'react';
 import { Controller, RegisterOptions, useFormContext } from 'react-hook-form';
 import { User } from './Profile';
 import style from './Profile.module.css';
@@ -48,7 +49,7 @@ export const FormField = ({
             <DatePicker
               {...field}
               value={field.value ? new Date(field.value) : null}
-              onChange={(date) => field.onChange(date)}
+              onChange={(date) => field.onChange(date?.toISOString())}
               maxDate={new Date()}
               className={style.input}
             />

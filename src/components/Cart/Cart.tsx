@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Cart.module.css';
 import { Text } from '@mantine/core';
 import { Link } from 'react-router';

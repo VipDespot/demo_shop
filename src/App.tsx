@@ -1,3 +1,4 @@
+import React from 'react';
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import { Routes, Route } from 'react-router';

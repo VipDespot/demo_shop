@@ -1,3 +1,4 @@
+import React from 'react';
 import { Cart } from '../../components/Cart/Cart';
 import style from './Home.module.css';
 import { useState } from 'react';

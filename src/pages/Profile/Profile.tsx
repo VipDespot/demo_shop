@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   useForm,
   SubmitHandler,
@@ -15,7 +16,8 @@ export interface User {
   login: string;
   email: string;
   password: number | string;
-  birthDate: Date | null;
+  // birthDate: Date | null;
+  birthDate: string
 }
 interface FieldConfig {
   name: keyof User;
@@ -66,7 +68,7 @@ export const Profile = () => {
       login: '',
       email: '',
       password: '',
-      birthDate: null,
+      birthDate: '',
     },
   });
   const { handleSubmit, reset } = methods;
@@ -143,7 +145,7 @@ export const Profile = () => {
                 Birth Date:
               </Text>
               <Text c="#2d3748" className={style.detailValue}>
-                {user.birthDate?.toLocaleDateString()}
+                {user.birthDate}
               </Text>
             </div>
           </div>
