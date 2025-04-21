@@ -2,7 +2,6 @@ import {
   useForm,
   SubmitHandler,
   FormProvider,
-  RegisterOptions,
 } from "react-hook-form";
 import style from "./Profile.module.css";
 import { useState } from "react";
@@ -22,7 +21,7 @@ interface FieldConfig {
   name: keyof User;
   label: string;
   type?: React.HTMLInputTypeAttribute;
-  validation?: RegisterOptions;
+  validation?: object
 }
 const fieldsConfig: FieldConfig[] = [
   { name: "name", label: "First Name" },
@@ -75,6 +74,7 @@ export const Profile = () => {
     setUser(data);
     reset();
   };
+
 
   const handleClearUser = () => {
     setUser(null);
