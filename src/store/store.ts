@@ -1,14 +1,14 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import basketReducer from "./slice/basketSlice";
-import { productsApi } from "../services/getApi";
-import storage from "redux-persist/lib/storage";
-import { persistStore, persistReducer } from "redux-persist";
-import limitedSlice from "./slice/limitedSlice";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import basketReducer from './slice/basketSlice';
+import { productsApi } from '../services/getApi';
+import storage from 'redux-persist/lib/storage';
+import { persistStore, persistReducer } from 'redux-persist';
+import limitedSlice from './slice/limitedSlice';
 
 const persistConfig = {
-  key: "root",
+  key: 'root',
   storage,
-  whitelist: ["basket"],
+  whitelist: ['basket'],
 };
 const rootReducer = combineReducers({
   [productsApi.reducerPath]: productsApi.reducer,

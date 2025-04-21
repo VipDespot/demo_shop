@@ -1,12 +1,12 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { BasketItem, BasketState } from "../../types/api/BasketTypes";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { BasketItem, BasketState } from '../../types/api/BasketTypes';
 
 const initialState: BasketState = {
   items: [],
 };
 
 const BasketSlice = createSlice({
-  name: "basket",
+  name: 'basket',
   initialState,
   reducers: {
     addToBascet: (state, action: PayloadAction<BasketItem>) => {

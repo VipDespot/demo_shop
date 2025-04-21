@@ -1,11 +1,11 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
   productsPerPage: 12,
 };
 
 const limitedSlice = createSlice({
-  name: "settings",
+  name: 'settings',
   initialState,
   reducers: {
     setProductsPerPage: (state, action: PayloadAction<number>) => {
@@ -15,5 +15,5 @@ const limitedSlice = createSlice({
 });
 
 export const { setProductsPerPage } = limitedSlice.actions;
-export default limitedSlice.reducer
+export default limitedSlice.reducer;
 

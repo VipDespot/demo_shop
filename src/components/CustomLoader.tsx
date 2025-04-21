@@ -1,4 +1,4 @@
-import { Loader, Text, Stack } from "@mantine/core";
+import { Loader, Text, Stack } from '@mantine/core';
 
 export const CustomLoader = () => {
   return (

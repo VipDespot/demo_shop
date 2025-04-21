@@ -1,9 +1,9 @@
-import { Button } from "@mantine/core";
-import style from "./Button.module.css";
-import "../../index.css";
-import { useDispatch } from "react-redux";
-import { addToBascet, removeToBasket } from "../../store/slice/basketSlice";
-import { BasketItem } from "../../types/api/BasketTypes";
+import { Button } from '@mantine/core';
+import style from './Button.module.css';
+import '../../index.css';
+import { useDispatch } from 'react-redux';
+import { addToBascet, removeToBasket } from '../../store/slice/basketSlice';
+import { BasketItem } from '../../types/api/BasketTypes';
 
 type ButtonAddToCartProps = {
   product: BasketItem;

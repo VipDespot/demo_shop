@@ -1,13 +1,13 @@
-import styles from "./Cart.module.css";
-import { Text } from "@mantine/core";
-import { Link } from "react-router";
-import { Product } from "../../types/api/Api.Products";
+import styles from './Cart.module.css';
+import { Text } from '@mantine/core';
+import { Link } from 'react-router';
+import { Product } from '../../types/api/Api.Products';
 
 interface ProductProps {
   products?: Product[]
 }
 export const Cart: React.FC<ProductProps> = ({products = [] }) => {
-  console.log(products[0].images)
+  console.log(products[0].images);
   return (
     <div className={styles.products}>
       {products?.map((product) => (
