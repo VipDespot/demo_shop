@@ -7,4 +7,4 @@ import { BrowserRouter } from 'react-router';
 import { Provider } from 'react-redux';
 import { persistor, store } from '../src/store/store';
 import { PersistGate } from 'redux-persist/es/integration/react';
-createRoot(document.getElementById('root')).render(_jsx(StrictMode, { children: _jsx(BrowserRouter, { children: _jsx(Provider, { store: store, children: _jsx(PersistGate, { loading: null, persistor: persistor, children: _jsx(App, {}) }) }) }) }));
+createRoot(document.getElementById('root')).render(_jsx(StrictMode, { children: _jsx(BrowserRouter, { basename: import.meta.env.BASE_URL, children: _jsx(Provider, { store: store, children: _jsx(PersistGate, { loading: null, persistor: persistor, children: _jsx(App, {}) }) }) }) }));

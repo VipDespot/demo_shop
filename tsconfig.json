@@ -1,16 +1,4 @@
-// {
-//   "compilerOptions": {
-//     "jsx": "react"
-//   },"include": [
-//     "**/*.ts",
-//     "**/*.tsx",
-//     "**/*.d.ts",
-//     "vite.config.ts",
-//     "demo_shop/**/*.ts",
-//     "demo_shop/**/*.tsx"
-//   ],
-//   "exclude": ["node_modules", "dist"]
-// }
+
 {
   "compilerOptions": {
     "target": "ESNext",
